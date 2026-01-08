@@ -105,13 +105,13 @@ while (i < nb_student) {
 console.log("Nombre d'élèves admis :", nb_student_admis);
 console.log("Nombre d'élèves refusés :", nb_student - nb_student_admis);
 
+// Bonus 
+
 // Calcul de la somme des moyennes
 let som = 0;
 students.forEach(stud => {
     som += stud.average;
 });
-
-// Bonus 
 
 // Calcul de la moyenne générale de la classe
 let average_class = som / nb_student;
