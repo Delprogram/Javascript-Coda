@@ -101,4 +101,7 @@ console.log("Tableau après tri :", notes);
 console.log("Nombre d’échanges :", nb_exchange1);
 console.log("Nombre de vérifications :", nb_verify1);
 
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
