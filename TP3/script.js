@@ -76,9 +76,15 @@ for (let i = 0; i < students.length; i++) {
         // ===============================
 
         // Échange des moyennes entre l'élève trouvé et le premier élève du tableau
-        students[i].moyenne = students[0].moyenne;
-        students[0].moyenne = min_moyenne;
+        let tmp = students[i];
+        students[i] = students[0];
+        students[0] = tmp;
     }
+}
+
+console.log("=== Afficher le tableau après échange avec prénom et sa moyenne ===");
+for (let stud of students) {
+    console.log(stud.firstName, '-', stud.moyenne);
 }
 
 // ===============================
@@ -120,9 +126,9 @@ for (let j = 0; j < students.length - 1; j++) {
         if (students[j].moyenne > students[i].moyenne) {
 
             // Échange des moyennes
-            let tmp = students[j].moyenne;
-            students[j].moyenne = students[i].moyenne;
-            students[i].moyenne = tmp;
+            let tmp = students[j];
+            students[j] = students[i];
+            students[i] = tmp;
 
             nb_exchange++;
         }   
@@ -159,9 +165,9 @@ for (let j = 0; j < students.length - 1; j++) {
         nb_verify_n++;
         if (students[j].noteMath > students[i].noteMath) {
             // Échange des notes de math
-            let tmp = students[j].noteMath;
-            students[j].noteMath = students[i].noteMath;
-            students[i].noteMath = tmp;
+            let tmp = students[j];
+            students[j] = students[i];
+            students[i] = tmp;
             nb_exchange_n++;
         }   
     }
