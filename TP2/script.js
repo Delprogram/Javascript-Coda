@@ -24,7 +24,7 @@ console.log("Taille du tableau :", taille);
 let min_note = notes[0];
 let max_note = notes[0];
 
-for (let i = 0; i < notes.length; i++) {
+for (let i = 0; i < notes.length - 1; i++) {
     if (max_note < notes[i + 1]) 
         max_note = notes[i + 1];
     if (min_note > notes[i + 1]) 
@@ -53,6 +53,8 @@ console.log("Tableau avant tri :", notes);
 // Partie 4 : Tri par sélection complet
 
 // Nombre de vérifications et d’échanges
+console.log("=== Tri ordre croissant ===");
+
 let nb_exchange = 0;
 let nb_verify = 0;
 
@@ -72,12 +74,12 @@ for (let j = 0; j < notes.length - 1; j++) {
 // Partie 5 : Affichage du résultat
 
 // Affichage du tableau après tri
-console.log("=== Tri ordre croissant ===");
 console.log("Tableau après tri :", notes);
 console.log("Nombre d’échanges :", nb_exchange);
 console.log("Nombre de vérifications :", nb_verify);
 
 // Tri dans l'ordre décroissant
+console.log("=== Tri ordre décroissant ===");
 
 let nb_exchange1 = 0;
 let nb_verify1 = 0;
@@ -96,7 +98,6 @@ for (let j = 0; j < notes.length - 1; j++) {
 }
 
 // Affichage du tableau après tri
-console.log("=== Tri ordre décroissant ===");
 console.log("Tableau après tri :", notes);
 console.log("Nombre d’échanges :", nb_exchange1);
 console.log("Nombre de vérifications :", nb_verify1);
