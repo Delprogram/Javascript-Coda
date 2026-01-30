@@ -1,0 +1,326 @@
+/* Reset léger */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: #ffffff;
+}
+
+/* Conteneur principal */
+#server-config {
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    border: 2px solid #eb6817;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    width: 400px;
+}
+
+/* Titre optionnel */
+#server-config label {
+    display: block;
+    text-align: start;
+    width: 60%;
+    font-size: .9rem;
+    margin-bottom: .5rem;
+    color: #ffd27d;
+}
+
+/* Champ IP:PORT */
+#serverAddress{
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-bottom: 1.2rem;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid transparent;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+#serverAddress::placeholder {
+    color: #aaa;
+}
+
+#serverAddress:focus {
+    border-color: #eb6817;
+    box-shadow: 0 0 0 3px rgba(235, 104, 23, 0.3);
+}
+
+/* Bouton */
+#connectBtn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #eb6817, #ff9f43);
+    color: #000;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#connectBtn:hover,
+#generalRanking:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(235, 104, 23, 0.5);
+}
+
+#connectBtn:active,
+#generalRanking:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(235, 104, 23, 0.4);
+}
+
+.player-select {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 2px solid #ff9800;
+    background-color: #1e1e2f;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.player-select:hover {
+    border-color: #ffc107;
+}
+
+.player-select:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+}
+
+.player-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+}
+
+
+#playerStats {
+    margin-top: 1rem;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 2px solid #ff5722;
+    background-color: #1e1e2f;
+    color: #fff;
+    font-size: 16px;
+}
+
+#playerStats li {
+    margin-top: 1rem;
+    color: #ffd27d;
+}
+
+#playerStats li span {
+    color: #fff;
+}
+
+#playerStats strong {
+    color: #ffc107;
+    display: flex;
+    justify-self: center;
+    font-size: 1.4rem;
+}
+
+#span {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+}
+
+#generalRanking {
+    width: 50%;
+    padding: 0.8rem .1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #eb6817, #ff9f43);
+    color: #000;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Container du classement */
+#rankingContainer {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Titre optionnel */
+#rankingContainer h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #ffb703;
+}
+
+/* Tableau */
+#rankingContainer table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* En-tête */
+#rankingContainer thead {
+    background: linear-gradient(135deg, #ff7b00, #ffb703);
+    color: #000;
+}
+
+#rankingContainer th {
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Lignes */
+#rankingContainer td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Alternance des lignes */
+#rankingContainer tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Effet hover */
+#rankingContainer tbody tr:hover {
+    background: rgba(255, 183, 3, 0.2);
+    transition: 0.2s;
+}
+
+/* Joueur (nom) en gras */
+.highlight  {
+    font-weight: bold;
+    color: #ffb703;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Select filtre */
+#rankingContainer select {
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: #ffb703;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#rankingContainer table {
+    display: block;
+    max-height: 400px;
+    overflow-y: auto;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Scrollbar personnalisée */
+#rankingContainer table::-webkit-scrollbar {
+    width: 8px;
+}
+
+#rankingContainer table::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+#rankingContainer table::-webkit-scrollbar-thumb {
+    background: #ffb703;
+    border-radius: 5px;
+}
+
+#rankingContainer table::-webkit-scrollbar-thumb:hover {
+    background: #ff7b00;
+}
+
+/* Scrollbar pour le select player */
+.player-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    overflow-y: auto;
+    /* max-height: 30px; */
+}
+
+/* Scrollbar personnalisée pour le select */
+.player-select::-webkit-scrollbar {
+    width: 6px;
+}
+
+.player-select::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.player-select::-webkit-scrollbar-thumb {
+    background: #ffb703;
+    border-radius: 5px;
+}
+
+.player-select::-webkit-scrollbar-thumb:hover {
+    background: #ff7b00;
+}
+
+.selected-player {
+    background-color: #ec8506d7!important;
+    color: white;
+    font-weight: bold;
+}
+
+#rankingContainer table tbody tr {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+
+

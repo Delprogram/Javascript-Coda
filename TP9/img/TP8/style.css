@@ -1,0 +1,15 @@
+
+
+.player {
+    width: 50px;      
+    height: 64px; 
+
+    background-image: url("skin.png");
+    background-repeat: no-repeat;
+
+    background-position: 0px 0px;
+
+    background-size: auto;
+
+}
+
